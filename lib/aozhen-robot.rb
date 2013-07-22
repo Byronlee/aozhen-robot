@@ -37,6 +37,7 @@ class Move
       @y += 1
     elsif M?
     
+    end
   end
 
   def command_L?
