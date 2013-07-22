@@ -1,6 +1,8 @@
 require 'net/http/server' 
 require 'webmock/rspec'
-require "#{File.dirname(__FILE__)}/../lib/aozhen-robot"
+require "#{File.dirname(__FILE__)}/../lib/aozhen-robot/turn"
+require "#{File.dirname(__FILE__)}/../lib/aozhen-robot/command"
+require "#{File.dirname(__FILE__)}/../lib/aozhen-robot/robot"
 
 describe "request xml format" do
    it "request xml should include command" do

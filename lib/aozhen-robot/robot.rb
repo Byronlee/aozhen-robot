@@ -13,9 +13,9 @@ class Robot
       @y += 1
       location =  [@x, @y, @dir]
     elsif cmd.cmd_L?
-      location =  [@x, @y, turn('L')]
+      location =  [@x, @y, turn(@dir)]
     else cmd.cmd_R?
-      location =  [@x, @y, turn('R')]
+      location =  [@x, @y, turn(@dir)]
     end
 
     location
