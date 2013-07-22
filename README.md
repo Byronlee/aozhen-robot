@@ -20,6 +20,10 @@ Or install it yourself as:
 
 TODO: Write usage instructions here
 
+## Introductions
+
+see: ref/demand.doc
+
 ## Contributing
 
 1. Fork it
