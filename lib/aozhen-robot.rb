@@ -3,7 +3,8 @@ require 'net/http/server'
 require 'pp'
 require 'crack/xml'
 require 'aozhen-robot/turn'
-require 'aozhen-robot/move'
+require 'aozhen-robot/robot'
+require 'aozhen-robot/command'
 
 # robot move rule
 #
