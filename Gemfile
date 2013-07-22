@@ -4,4 +4,5 @@ source 'http://ruby.taobao.org'
 
 gem 'net-http-server'
 gem 'crack'
+gem 'xml-simple'
 gemspec

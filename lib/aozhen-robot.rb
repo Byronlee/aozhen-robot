@@ -1,7 +1,10 @@
+# -*- coding: utf-8 -*-
 
 require 'net/http/server'
 require 'pp'
 require 'crack/xml'
+require 'xmlsimple'
+require 'builder'
 require 'aozhen-robot/turn'
 require 'aozhen-robot/robot'
 require 'aozhen-robot/command'
@@ -14,16 +17,28 @@ require 'aozhen-robot/command'
 #
 module Aozhen
   module Robot
+    Net::HTTP::Server.run(:port => 3001) do |request,stream|
+#      p request
+#      command =  parse_request request.body      
+      create_response_xml(Robot.move "L")      
+    end
 
- #   Net::HTTP::Server.run(:port => 3001) do |request,stream|
- #     pp request
-
- #     [200, {'Content-Type' => 'text/html'}, ['<data a="1" b="five" />']]
- #   end
+    def create_response_xml robot_moved_result
+      xml = Builder::XmlMarkup.new( :indent => 2 )
+      xml.instruct! :xml, :encoding => "UTF-8"    
+      xml.robot_position do |d|
+        d.x      robot_moved_result[0]
+        d.y      robot_moved_result[1]
+        d.d      robot_moved_result[2]
+      end
+    end
+    
+    def parse_request body
+      Crack::XML.parse body
+      # => {'tag' => 'This is the contents'}
+    end
  end
 end
 
-Crack::XML.parse("<tag>This is the contents</tag>")
-# => {'tag' => 'This is the contents'}
 
 
