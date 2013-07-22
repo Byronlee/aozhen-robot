@@ -1,6 +1,6 @@
 # Aozhen::Robot
 
-TODO: Write a gem description
+Robot moves according to commands form http request  including xml body
 
 ## Installation
 
