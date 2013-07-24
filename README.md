@@ -1,6 +1,11 @@
 # Aozhen::Robot
 
-Robot moves according to commands form http request  including xml body
+Robot designed a point actually moves by commands from HTTP request.  
+
+aozhen-robot is treated as HTTP server and [aozhen](https://github.com/simlegate/aozhen) created by Rails is a HTTP client can send commands.  
+
+Client and Server communicates with XML.  
+
 
 [![Build Status](https://travis-ci.org/simlegate/aozhen-robot.png)](https://travis-ci.org/simlegate/aozhen-robot)
 
