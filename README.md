@@ -2,7 +2,7 @@
 
 Robot designed a point actually moves by commands from HTTP request.  
 
-aozhen-robot is treated as HTTP server and [aozhen](https://github.com/simlegate/aozhen) created by Rails is a HTTP client can send commands.  
+aozhen-robot is treated as HTTP server and [aozhen](https://github.com/simlegate/aozhen) created by Rails treated as HTTP client can send commands to server.  
 
 Client and Server communicates with XML.  
 
