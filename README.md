@@ -2,6 +2,8 @@
 
 Robot moves according to commands form http request  including xml body
 
+[![Build Status](https://travis-ci.org/simlegate/aozhen-robot.png)](https://travis-ci.org/simlegate/aozhen-robot)
+
 ## Installation
 
 Add this line to your application's Gemfile:
