@@ -25,5 +25,9 @@ describe Robot do
     cmd = Command.new('R')
     @robot.move(cmd).should == [0,0,'S']
   end
+
+  it "the step of moving should be 1" do
+    @robot.instance_variable_get(:@step).should == 1
+  end
 end
 
