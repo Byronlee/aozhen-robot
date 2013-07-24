@@ -6,8 +6,8 @@ require 'aozhen-robot/version'
 Gem::Specification.new do |gem|
   gem.name          = "aozhen-robot"
   gem.version       = Aozhen::Robot::VERSION
-  gem.authors       = ["Jackie Lee"]
-  gem.email         = ["freedomprogramer@gmail.com"]
+  gem.authors       = ["simlegate"]
+  gem.email         = ["simlegate@163.com"]
   gem.description   = %q{TODO: Write a gem description}
   gem.summary       = %q{TODO: Write a gem summary}
   gem.homepage      = ""
