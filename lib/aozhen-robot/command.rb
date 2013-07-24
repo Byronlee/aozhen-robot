@@ -1,5 +1,6 @@
 class Command
   def initialize cmd
+   
     @cmds = ['L','M','R']
     if @cmds.include? cmd
       @cmd = cmd
@@ -19,5 +20,9 @@ class Command
 
   def cmd_R?
     @cmd == 'R'
+  end
+
+  def to_s
+    @cmd.to_s
   end
 end

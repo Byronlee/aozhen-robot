@@ -21,7 +21,7 @@ module Aozhen
 #      p request
 #      command =  parse_request request.body 
       
-      p Robot.new(0,0,'E').move(Command.new("L"))
+#     p Robot.new(0,0,'E').move(Command.new("L"))
 #      create_response_xml(Robot.move "L")      
     end
 

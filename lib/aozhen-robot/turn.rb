@@ -11,20 +11,24 @@ class Turn
    end
 
    def excute
-     left  = ['E','N','W','S']
-     right = ['E','S','W','N']
-
      # refactor
-      if action_L?
-        index = left.index(@dir)
-        @dir  = left[index - 1]
-      elsif action_R?
-        index = right.index(@dir)
-        @dir  = right[index + 1] || right.first
-	
-      end
+     if action_L?
+       index = left.index(@dir)
+       @dir  = left[index - 1]
+     elsif action_R?
+       index = right.index(@dir)
+       @dir  = right[index + 1] || right.first
+     end
 
      @dir
+   end
+
+   def left
+     @left ||= ['E','N','W','S']
+   end
+
+   def right
+     @right ||= ['E','S','W','N']
    end
    
    def action_L?
