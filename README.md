@@ -1,4 +1,4 @@
-# Aozhen::Robot
+# aozhen-robot
 
 Robot designed a point actually moves by commands from HTTP request.  
 
