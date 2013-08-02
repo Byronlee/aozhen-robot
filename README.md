@@ -1,6 +1,13 @@
-# Aozhen::Robot
+# aozhen-robot
 
-TODO: Write a gem description
+Robot designed a point actually moves by commands from HTTP request.  
+
+aozhen-robot is treated as HTTP server and [aozhen](https://github.com/simlegate/aozhen) created by Rails treated as HTTP client can send commands to server.  
+
+Client and Server communicates with XML.  
+
+
+[![Build Status](https://travis-ci.org/simlegate/aozhen-robot.png)](https://travis-ci.org/simlegate/aozhen-robot)
 
 ## Installation
 
@@ -19,6 +26,10 @@ Or install it yourself as:
 ## Usage
 
 TODO: Write usage instructions here
+
+## Introductions
+
+see: ref/demand.doc
 
 ## Contributing
 

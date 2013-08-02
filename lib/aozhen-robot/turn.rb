@@ -7,32 +7,28 @@ class Turn
    # action left 'L' or right 'R'
    def initialize dir, action
      @dir    = dir
-     @action = action
+     @cmd = Command.new action
    end
 
    def excute
-     left  = ['E','N','W','S']
-     right = ['E','S','W','N']
-
      # refactor
-      if action_L?
-        index = left.index(@dir)
-        @dir  = left[index - 1]
-      elsif action_R?
-        index = right.index(@dir)
-        @dir  = right[index + 1] || right.first
-	
-      end
+     if @cmd.cmd_L?
+       index = left.index(@dir)
+       @dir  = left[index - 1]
+     elsif @cmd.cmd_R?
+       index = right.index(@dir)
+       @dir  = right[index + 1] || right.first
+     end
 
      @dir
    end
-   
-   def action_L?
-     @action == 'L'
+
+   def left
+     @left ||= ['E','N','W','S']
    end
 
-   def action_R?
-     @action == 'R'
+   def right
+     @right ||= ['E','S','W','N']
    end
 end
 

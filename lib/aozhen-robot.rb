@@ -19,9 +19,17 @@ require 'aozhen-robot/command'
 module Aozhen
   module Robot
     Net::HTTP::Server.run(:port => 3001) do |request,stream|
+
     #  s =  Robot.new(0,0,'E').move(Command.new("L"))
     #  [200, {'Content-Type' => 'text/html'}, ["asdfasfdas"]]
       create_response_xml(Robot.move "L")      
+
+#      p request
+#      command =  parse_request request.body 
+      
+#     p Robot.new(0,0,'E').move(Command.new("L"))
+#      create_response_xml(Robot.move "L")      
+
     end
 
     def create_response_xml robot_moved_result

@@ -1,21 +1,22 @@
 class Robot
   
   def initialize x, y, dir
-    @x = x || 0
-    @y = y || 0
-    @dir = dir 
+    @point = Point.new(x, y)
+    @dir   = dir 
+    @step  = 1
   end
 
   def move cmd
     location = []
-
     if cmd.cmd_M?
-      @y += 1
-      location =  [@x, @y, @dir]
+      # TODO fixme!
+      @point.y += @step
+      # the dir of robot is not changed
+      location =  [@point.x, @point.y, @dir]
     elsif cmd.cmd_L?
-      location =  [@x, @y, turn(@dir)]
+      location =  [@point.x, @point.y, turn(cmd.to_s)]
     else cmd.cmd_R?
-      location =  [@x, @y, turn(@dir)]
+      location =  [@point.x, @point.y, turn(cmd.to_s)]
     end
 
     location
@@ -23,7 +24,7 @@ class Robot
 
   def turn command
     turn = Turn.new(@dir, command)
-    after_dir = turn.excute
+    turn.excute
   end
 end
 
