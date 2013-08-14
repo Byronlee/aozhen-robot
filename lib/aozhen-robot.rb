@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-require 'net/http/server'
+require 'net/http/server'  # 解析http请求
 require 'pp'
 require 'crack/xml'
-require 'xmlsimple'
-require 'builder'
+require 'xmlsimple' # 解析xm;
+require 'builder' # 产生xml
 require 'aozhen-robot/turn'
 require 'aozhen-robot/robot'
 require 'aozhen-robot/command'
@@ -22,12 +22,17 @@ module Aozhen
 
     #  s =  Robot.new(0,0,'E').move(Command.new("L"))
     #  [200, {'Content-Type' => 'text/html'}, ["asdfasfdas"]]
-      create_response_xml(Robot.move "L")      
 
-#      p request
-#      command =  parse_request request.body 
       
-#     p Robot.new(0,0,'E').move(Command.new("L"))
+      # 最后重构 使用命令模式！！！！！
+      command =  "#{parse_request(request.body)}command"
+      command_class  = self.class.const_get command
+      rebot = Rebote.new 
+      commands = CompositeComand.new rebot
+      commands << command_class.new
+      commands.execute
+      rebot.position
+
 #      create_response_xml(Robot.move "L")      
 
     end
